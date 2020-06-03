@@ -27,19 +27,13 @@
                 <!-- Some DataTypes include sub-types, they are added as following -->
                 <ExtraTypes>
                     <ExtraType DataType="HeroGuiElement, Assembly-CSharp" />
-                </ExtraTypes>
-                <!-- Path leading to the files, starting from the location of this XML file. Note that you can use * to include several files at once (eg. GuiElements[*].xml) -->
-                <FilePath>Gui/GuiElements.xml</FilePath>
-            </DatabasePlugin>
-            <!-- Add one DatabasePlugin for each type you modify. Available DataTypes are referenced in XmlReference.xml -->
-            <DatabasePlugin DataType="Amplitude.Unity.Gui.GuiElement, Assembly-CSharp-firstpass">
-                <!-- Some DataTypes include sub-types, they are added as following -->
-                <ExtraTypes>
                     <ExtraType DataType="AffinityGuiElement, Assembly-CSharp" />
                 </ExtraTypes>
-                <!-- Path leading to the files, starting from the location of this XML file. Note that you can use * to include several files at once (eg. GuiElements[*].xml) -->
                 <FilePath>Gui/GuiElements[*].xml</FilePath>
             </DatabasePlugin>
+            <LocalizationPlugin DefaultLanguage="english">
+                <Directory>Localization</Directory>
+            </LocalizationPlugin>
         </Plugins>
     </RuntimeModule>
 </Datatable>
