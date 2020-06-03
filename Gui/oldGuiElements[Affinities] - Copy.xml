@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Gui.GuiElement.xsd">
+
+    <!-- ########################################## -->
+    <!-- ######        MAJOR FACTIONS        ###### -->
+    <!-- ########################################## -->
+    <!-- AffinityGuiElement is mapped with the AffinityMapping of the Faction's MajorPopulation -->
+    
+	
+    <AffinityGuiElement Name="AffinityMappingHoratio" PreloadCount="3" >
+        <Title>%AffinityHoratioTitle</Title>
+        <Description>%AffinityHoratioDescription</Description>
+        <Icons>
+            <Icon Size="Small" Path="Bitmaps/Atlased/Affinities/AffinityHoratioSmall" />
+            <Icon Size="Medium" Path="Bitmaps/Atlased/Affinities/AffinityHoratioMedium" />
+            <Icon Size="MediumInverted" Path="Bitmaps/Dynamic/Affinities/MediumInverted/AffinityHoratioMediumInverted" />
+            <Icon Size="Large" Path="Bitmaps/Dynamic/Affinities/AffinityHoratioLarge" />
+            <Icon Size="Leader" Path="Bitmaps/Dynamic/Affinities/AffinityHoratioLeader" />
+            <Icon Size="Mood" Path="Bitmaps/Dynamic/Affinities/AffinityHoratioMood" />
+            <Icon Size="SmallExtended" Path="Bitmaps/Atlased/Notifications/NotificationEmpireMet/NotificationMajorEmpireMetHoratioSmall" />
+            <Icon Size="MediumExtended" Path="Bitmaps/Dynamic/Notifications/NotificationEmpireMet/NotificationMajorEmpireMetHoratioMedium" />
+            <Icon Size="Loading" Path="Bitmaps/Dynamic/Moods/LoadingScreen06" />
+        </Icons>
+        <SymbolString>[horatio]</SymbolString>
+        <Sounds>
+            <Sound EventName="Play_ES2_Voices_OUTRO_Horatio" Type="Outro"/>
+        </Sounds>
+        <Color Red="255" Green="255" Blue="255" Alpha="255" />
+		<Movies>
+            <Movie Path="Movies/Factions/Horatio_Intro.mp4" Type="Intro" />
+            <Movie Path="Movies/Factions/Horatio_Outro.mp4" Type="Outro" />
+        </Movies>
+        <ModelPath>Prefabs/Gui/AnimatedPortrait/AnimatedPortraitHoratioLeaders01</ModelPath>
+    </AffinityGuiElement>
+  <Datatable/>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Documentation/Schemas/Amplitude.Unity.Gui.GuiElement.xsd">
+
+	<!-- ATTRIBUTES -->
+	<!-- Name: the name of the element the GuiElement refers to -->
+	
+	<!-- ELEMENTS -->
+	<!-- Title: the title of the technology. There must be a LocalizationPair with the same name for it to be properly displayed -->
+	<!-- Description: the description of the technology. There must be a LocalizationPair with the same name for it to be properly displayed -->
+	<!-- Icons: several sizes can be set for different uses -->
+    <!-- ModelPath: the path to the animated model of the hero. Here, we have none so that the icons are used instead. -->
+
+    <HeroGuiElement Name="HeroHoratio01">
+        <Title>%HeroHoratio01Title</Title>
+        <Description>%HeroHoratio01Description</Description>
+        <Icons>
+            <!-- These textures are used in tooltips, and in the notification if the animated model fails to load. -->
+            <Icon Size="Medium" Path="Gui/Horatio1Medium"/>
+            <Icon Size="Large" Path="Gui/Horatio1Large"/>
+            <Icon Size="Mood" Path="Gui/Horatio1Mood"/>
+        </Icons>
+    </HeroGuiElement>
+
+    <HeroGuiElement Name="HeroHoratio02">
+        <Title>%HeroHoratio02Title</Title>
+        <Description>%HeroHoratio02Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Horatio2Medium"/>
+            <Icon Size="Large" Path="Gui/Horatio2Large"/>
+            <Icon Size="Mood" Path="Gui/Horatio2Mood"/>
+        </Icons>
+    </HeroGuiElement>
+
+    <HeroGuiElement Name="HeroHoratio03">
+        <Title>%HeroHoratio03Title</Title>
+        <Description>%HeroHoratio03Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Horatio3Medium"/>
+            <Icon Size="Large" Path="Gui/Horatio3Large"/>
+            <Icon Size="Mood" Path="Gui/Horatio3Mood"/>
+        </Icons>
+    </HeroGuiElement>
+
+    <HeroGuiElement Name="HeroHoratio04">
+        <Title>%HeroHoratio04Title</Title>
+        <Description>%HeroHoratio04Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Horatio4Medium"/>
+            <Icon Size="Large" Path="Gui/Horatio4Large"/>
+            <Icon Size="Mood" Path="Gui/Horatio4Mood"/>
+        </Icons>
+    </HeroGuiElement>
+	
+</Datatable>

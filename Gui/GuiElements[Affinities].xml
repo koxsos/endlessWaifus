@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Gui.GuiElement.xsd">
+
+    <!-- ########################################## -->
+    <!-- ######        MAJOR FACTIONS        ###### -->
+    <!-- ########################################## -->
+    <!-- AffinityGuiElement is mapped with the AffinityMapping of the Faction's MajorPopulation -->
+    
+	
+    <AffinityGuiElement Name="AffinityMappingHoratio" PreloadCount="3" >
+        <Title>%AffinityHoratioTitle</Title>
+        <Description>%AffinityHoratioDescription</Description>
+        <Icons>
+            <Icon Size="Small" Path="Gui/AffinityHoratioSmall" />
+            <Icon Size="Medium" Path="Gui/AffinityHoratioMedium" />
+            <Icon Size="MediumInverted" Path="Gui/AffinityHoratioMediumInverted" />
+            <Icon Size="Large" Path="Gui/AffinityHoratioLarge" />
+            <Icon Size="Leader" Path="Gui/AffinityHoratioLeader" />
+            <Icon Size="Mood" Path="Gui/AffinityHoratioMood" />   <!-- faction selection, diplomacy and encounter background provided modelPath is disabled-->
+            <Icon Size="SmallExtended" Path="Gui/NotificationMajorEmpireMetHoratioSmall" />
+            <Icon Size="MediumExtended" Path="Gui/NotificationMajorEmpireMetHoratioMedium" />
+            <Icon Size="Loading" Path="Gui/LoadingScreen06" />   <!-- faction loading screen -->
+        </Icons>
+        <SymbolString>[horatio]</SymbolString>
+        <Sounds>
+            <Sound EventName="Play_ES2_Voices_OUTRO_Horatio" Type="Outro"/>
+        </Sounds>
+        <Color Red="255" Green="255" Blue="255" Alpha="255" />
+		 <!-- <Movies>
+           <Movie Path="Movies/Factions/Horatio_Intro.mp4" Type="Intro" />
+         <Movie Path="Movies/Factions/Horatio_Outro.mp4" Type="Outro" />
+        </Movies>
+        <ModelPath>Prefabs/Gui/AnimatedPortrait/AnimatedPortraitHoratioLeaders01</ModelPath>  -->
+    </AffinityGuiElement>
+</Datatable>  
