@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="Schemas/Amplitude.Unity.Runtime.RuntimeModule.xsd">
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="Documentation/Schemas/Amplitude.Unity.Runtime.RuntimeModule.xsd">
 
     <!-- Conversion = add new files, not compatible with other mods. Standalone = replace all files, not compatible with other mods. Extension = add new files, compatible with other mods. -->
     <RuntimeModule Name="EnlessWaifus" Type="Extension" Version="1.0">
@@ -27,13 +27,19 @@
                 <!-- Some DataTypes include sub-types, they are added as following -->
                 <ExtraTypes>
                     <ExtraType DataType="HeroGuiElement, Assembly-CSharp" />
+                </ExtraTypes>
+                <!-- Path leading to the files, starting from the location of this XML file. Note that you can use * to include several files at once (eg. GuiElements[*].xml) -->
+                <FilePath>Gui/GuiElements.xml</FilePath>
+            </DatabasePlugin>
+            <!-- Add one DatabasePlugin for each type you modify. Available DataTypes are referenced in XmlReference.xml -->
+            <DatabasePlugin DataType="Amplitude.Unity.Gui.GuiElement, Assembly-CSharp-firstpass">
+                <!-- Some DataTypes include sub-types, they are added as following -->
+                <ExtraTypes>
                     <ExtraType DataType="AffinityGuiElement, Assembly-CSharp" />
                 </ExtraTypes>
+                <!-- Path leading to the files, starting from the location of this XML file. Note that you can use * to include several files at once (eg. GuiElements[*].xml) -->
                 <FilePath>Gui/GuiElements[*].xml</FilePath>
             </DatabasePlugin>
-            <LocalizationPlugin DefaultLanguage="english">
-                <Directory>Localization</Directory>
-            </LocalizationPlugin>
         </Plugins>
     </RuntimeModule>
 </Datatable>
