@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="../Schemas/Amplitude.Unity.Gui.GuiElement.xsd">
+    <HeroGuiElement Name="HeroPirateLeader01">
+        <Title>%HeroPirateLeader01Title</Title>
+        <Description>%HeroPirateLeader01Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Pirates/Aqua/Pirates_Aqua_Medium"/>
+            <Icon Size="Large" Path="Gui/Pirates/Aqua/Pirates_Aqua_Large"/>
+            <Icon Size="Mood" Path="Gui/Pirates/Aqua/Pirates_Aqua_Mood"/>
+        </Icons>
+    </HeroGuiElement>
+    <HeroGuiElement Name="HeroSefaloros01">
+        <Title>%HeroSefaloros01Title</Title>
+        <Description>%HeroSefaloros01Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Pirates/Megumin/Pirates_Megumin_Medium"/>
+            <Icon Size="Large" Path="Gui/Pirates/Megumin/Pirates_Megumin_Large"/>
+            <Icon Size="Mood" Path="Gui/Pirates/Megumin/Pirates_Megumin_Mood"/>
+        </Icons>
+    </HeroGuiElement>
+    <HeroGuiElement Name="HeroPirate01">
+        <Title>%HeroPirate01Title</Title>
+        <Description>%HeroPirate01Description</Description>
+        <Icons>
+            <Icon Size="Medium" Path="Gui/Pirates/Darkness/Pirates_Darkness_Medium"/>
+            <Icon Size="Large" Path="Gui/Pirates/Darkness/Pirates_Darkness_Large"/>
+            <Icon Size="Mood" Path="Gui/Pirates/Darkness/Pirates_Darkness_Mood"/>
+        </Icons>
+    </HeroGuiElement>
+</Datatable>
