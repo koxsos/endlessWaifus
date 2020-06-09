@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="Documentation/Schemas/Amplitude.Unity.Runtime.RuntimeModule.xsd">
+
+	<!-- Conversion = add new files, not compatible with other mods. Standalone = replace all files, not compatible with other mods. Extension = add new files, compatible with other mods. -->
+	<RuntimeModule Name="KoxsosHoratioQuintuples" Type="Extension" Version="1.2">
+
+        <!-- Title as it appears in the workshop -->
+        <Title>Horatio Quintuples</Title>
+        <!-- Description as it appears in the workshop -->
+        <Description>
+		Replaces the visuals of the Horatio 
+		heroes, leader, population, loading screen, faction selection screen
+		with pictures of Quintuples.
+		
+		Servers as proof of concept for Endless Waifu modpack, come find us at G2G forums to pitch in with content!		
+		
+		Enjoy, you can also reliably use the mod as base for similar attempts, best of luck! :-)		
+		</Description>
+        <!-- Name of the author -->
+        <Author>Koxsos</Author>
+        <!-- Link to your other work -->
+        <Homepage></Homepage>
+
+        <!-- Image as it appears in the workshop. Size should be 430x430 pixels -->
+        <PreviewImageFile>ModIcon.png</PreviewImageFile>
+        <!-- Add more content to this each time you update the mod -->
+        <ReleaseNotes>Managed to replace the faction leader and population assets after all, and cleaned up the mod a bit more.</ReleaseNotes>
+        <!-- Available tags: AI, Art, Buildings, Gameplay, Improvements, MajorFactions, Maps, MinorFactions, Multiplayer, Other, Resources, Technologies, Units -->
+        <Tags>Art,Heroes,Gameplay</Tags>
+
+		<!-- XML files to load -->
+		<Plugins>
+		
+			<!-- Add one DatabasePlugin for each type you modify. Available DataTypes are referenced in XmlReference.xml -->
+            <DatabasePlugin DataType="Amplitude.Unity.Gui.GuiElement, Assembly-CSharp-firstpass">
+				<!-- Some DataTypes include sub-types, they are added as following -->
+				<ExtraTypes>
+                    <ExtraType DataType="HeroGuiElement, Assembly-CSharp" />
+					<ExtraType DataType="AffinityGuiElement, Assembly-CSharp" />
+					<ExtraType DataType="Amplitude.Unity.Gui.ExtendedGuiElement, Assembly-CSharp-firstpass" />
+				</ExtraTypes>
+				<!-- Path leading to the files, starting from the location of this XML file. Note that you can use * to include several files at once (eg. GuiElements[*].xml) -->
+                <FilePath>Gui/GuiElements.xml</FilePath>
+			</DatabasePlugin>
+
+		</Plugins>
+
+	</RuntimeModule>
+</Datatable>

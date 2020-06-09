@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Datatable" />
+  <xs:element name="GameStatisticDefinition" nillable="true" type="GameStatisticDefinition" />
+  <xs:complexType name="GameStatisticDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DatatableElement">
+        <xs:attribute name="Tags" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DatatableElement">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="InterpreterBasedGameStatisticDefinition" nillable="true" type="InterpreterBasedGameStatisticDefinition" />
+  <xs:complexType name="InterpreterBasedGameStatisticDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GameStatisticDefinition">
+        <xs:attribute name="Expression" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
