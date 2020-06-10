@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Datatable" />
+  <xs:element name="SystemSupervisorDefinition" nillable="true" type="SystemSupervisorDefinition" />
+  <xs:complexType name="SystemSupervisorDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DatatableElement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Policy" type="SystemAutomatonPolicy" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Gains" type="ArrayOfSupervisorGain" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SystemAutomatonPolicy">
+    <xs:attribute name="CanQueueConstructions" type="xs:boolean" use="required" />
+    <xs:attribute name="CanMovePopulations" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSupervisorGain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gain" type="SupervisorGain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupervisorGain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Tags" type="Tags" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute default="1" name="Weight" type="xs:float" />
+  </xs:complexType>
+  <xs:complexType name="Tags">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DatatableElement">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

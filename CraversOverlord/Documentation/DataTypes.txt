@@ -1,0 +1,728 @@
+This file lists all the different data types that can be edited through XML, 
+as well as their respective files, located in ES2's installation folder's subfolder "Public"
+
+In your mod base XML, define a type modification as following:
+<!-- DataType defines the type which is modified. Only datatypes referenced in this file can be modified. Note that some end with "Assembly-CSharp", and others with "Assembly-CSharp-firstpass" -->
+<DatabasePlugin DataType="Faction, Assembly-CSharp">
+	<!-- ExtraTypes are sub-types, and are needed in some situations such as Factions. In others, this group is not included -->
+	<ExtraTypes>
+		<ExtraType DataType="MajorFaction, Assembly-CSharp" />
+		<ExtraType DataType="MinorFaction, Assembly-CSharp" />
+		<ExtraType DataType="LesserFaction, Assembly-CSharp" />
+		<ExtraType DataType="PirateFaction, Assembly-CSharp" />
+	</ExtraTypes>
+	<!-- The FilePath points to the XML where the data is modified, relative to the mod base XML -->
+	<FilePath>Public/Simulation/Factions[*].xml</FilePath>
+</DatabasePlugin>
+
+Note that if an XML entry has the same Name attribute as another (for example, two buildings with identical XML name),
+the one loaded last will override the first one, including one in the base game.
+
+#GENERATION
+
+DataType="GalaxyGeneratorWeightTableDefinition, Assembly-CSharp" :
+- Public/GalaxyGenerator/WeightTableDefinitions.xml
+- Public/GalaxyGenerator/WeightTableDefinitions[*].xml
+
+DataType="Generator.Definitions.PlanetaryResourceDefinition, Assembly-CSharp-firstpass" :
+- Public/GalaxyGenerator/PlanetaryResourceDefinitions.xml
+
+DataType="Generator.Definitions.PlanetGameplayTypeDefinition, Assembly-CSharp-firstpass" :
+- Public/GalaxyGenerator/PlanetGameplayTypeDefinitions.xml
+
+DataType="Generator.Definitions.PlanetTemperatureDefinition, Assembly-CSharp-firstpass" :
+- Public/GalaxyGenerator/PlanetTemperatureDefinitions.xml
+
+DataType="Generator.Definitions.PlanetGameplayTypeDefinition, Assembly-CSharp-firstpass" :
+- Public/GalaxyGenerator/PlanetGameplayTypeDefinitions.xml
+
+DataType="Generator.Definitions.GalaxyShapeMergePlans, Assembly-CSharp-firstpass" :
+- Public/GalaxyGenerator/GalaxyShapeMergePlansDefinitions.xml
+
+DataType="StarSystemNodeDefinition, Assembly-CSharp" :
+- Public/Simulation/StarSystemNodeDefinitions.xml
+
+DataType="SpecialNodeDefinition, Assembly-CSharp" :
+- Public/Simulation/SpecialNodeDefinitions.xml
+
+DataType="NodeVisibilityConditionsDefinition, Assembly-CSharp" :
+- Public/Simulation/NodeVisibilityConditionsDefinitions.xml
+- Public/Simulation/SpecialNodeDefinitions.xml
+
+#ENTITYACTIONS
+
+DataType="EntityActionDefinition, Assembly-CSharp" :
+	ExtraTypes (fleet):
+	 - DataType="ColonizeFleetActionDefinition, Assembly-CSharp"
+	 - DataType="RootNodeFleetActionDefinition, Assembly-CSharp"
+	 - DataType="AttachMothershipFleetActionDefinition, Assembly-CSharp"
+	 - DataType="ExpeditionFleetActionDefinition, Assembly-CSharp"
+	 - DataType="ReclaimMothershipFleetActionDefinition, Assembly-CSharp"
+	 - DataType="LaunchProbeFleetActionDefinition, Assembly-CSharp"
+	 - DataType="GoToFleetActionDefinition, Assembly-CSharp"
+	 - DataType="MoveToFleetActionDefinition, Assembly-CSharp"
+	 - DataType="TeleportToPreviousNodeFleetActionDefinition, Assembly-CSharp"
+	 - DataType="AutoExploreFleetActionDefinition, Assembly-CSharp"
+	 - DataType="AutomatedDeliveryFleetActionDefinition, Assembly-CSharp"
+	 - DataType="AttackFleetActionDefinition, Assembly-CSharp"
+	 - DataType="SleepFleetActionDefinition, Assembly-CSharp"
+	 - DataType="SleepForThisTurnFleetActionDefinition, Assembly-CSharp"
+	 - DataType="PrivateerFleetActionDefinition, Assembly-CSharp"
+	 - DataType="TransferResourcesFleetActionDefinition, Assembly-CSharp"
+	 - DataType="InitiateEmpireActionFleetActionDefinition, Assembly-CSharp"
+	 - DataType="DestroyPlanetFleetActionDefinition, Assembly-CSharp"
+	 - DataType="GuardEmpireLocalActionDefinition, Assembly-CSharp"
+
+	ExtraTypes (minor interaction):
+	 - DataType="EmpireDiplomaticActionDefinition, Assembly-CSharp"
+	 - DataType="EmpireDiplomaticActionDynamicCostDefinition, Assembly-CSharp"
+	 - DataType="AssimilateEmpireActionDefinition, Assembly-CSharp"
+	 - DataType="CreateAllianceEmpireActionDefinition, Assembly-CSharp"
+	 - DataType="AskForMinorQuestEmpireActionDefinition, Assembly-CSharp"
+	 - DataType="EmpireDiplomaticMigrationActionDefinition, Assembly-CSharp"
+	 - DataType="EmpireDiplomaticAbilityActionDefinition, Assembly-CSharp"
+	 - DataType="EmpireDiplomaticGivePopulationAsShipActionDefinition, Assembly-CSharp"
+	 - DataType="EmpireDiplomacyGiveResourcesActionDefinition, Assembly-CSharp"
+
+	ExtraTypes (system):
+	 - DataType="DecolonizeStarSystemActionDefinition, Assembly-CSharp"
+	 - DataType="PauseOutpostStarSystemActionDefinition, Assembly-CSharp"
+	 - DataType="OutpostActionDefinition, Assembly-CSharp"
+	 - DataType="OutpostActionMigrationDefinition, Assembly-CSharp"
+	 - DataType="OutpostActionBoostGrowthWithTradeRoutesDefinition, Assembly-CSharp"
+	 - DataType="OutpostActionWithTargetsDefinition, Assembly-CSharp"
+	 - DataType="GroundBattleStarSystemActionDefinition, Assembly-CSharp"
+	 - DataType="SiegeStarSystemActionDefinition, Assembly-CSharp"
+	 - DataType="PropagandaSystemActionDefinition, Assembly-CSharp"
+- Public/Simulation/EntityActions[*].xml
+
+#DIPLOMACY
+
+DataType="DiplomaticRelationState, Assembly-CSharp" :
+- Public/Diplomacy/DiplomaticRelationStates.xml
+- Public/Diplomacy/DiplomaticRelationStates[*].xml
+
+DataType="DiplomaticAbilityDefinition, Assembly-CSharp" :
+- Public/Diplomacy/DiplomaticAbilities.xml
+
+DataType="ForeignAffairsConstructibleElement, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="DiplomaticTermDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermDiplomaticRelationStateDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermResourceExchangeDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermTechnologyExchangeDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermStarSystemColonyExchangeDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermStarSystemOutpostExchangeDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermAllianceDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermBreakAllianceDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermProposalDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermDeclareWarDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermPressureReductionDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermResourceExchangeDemandDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermTechnologyExchangeDemandDefinition, Assembly-CSharp"
+	 - DataType="DiplomaticTermMapSharingDefinition, Assembly-CSharp"
+- Public/Diplomacy/ForeignAffairsConstructibles[*].xml
+
+DataType="DiplomaticPressureEffectDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="DiplomaticPressureEffectDefinition_DiplomaticRelationState, Assembly-CSharp"
+	 - DataType="DiplomaticPressureEffectDefinition_DiplomaticAbility, Assembly-CSharp"
+- Public/Diplomacy/DiplomaticPressureEffects.xml
+
+DataType="WarPointsRewardDefinition, Assembly-CSharp" :
+- Public/Diplomacy/WarPointsRewardDefinitions.xml
+
+DataType="ContractStubDefinition, Assembly-CSharp" :
+- Public/Diplomacy/ContractStubDefinitions.xml
+
+DataType="MinorStateDefinition, Assembly-CSharp" :
+- Public/MinorFactions/MinorStateDefinitions.xml
+
+DataType="ImprovementListDefinition, Assembly-CSharp" :
+- Public/MinorFactions/ImprovementListDefinitions.xml
+
+DataType="PlanetImprovementMappingDefinition, Assembly-CSharp" :
+- Public/MinorFactions/PlanetImprovementMappingDefinitions.xml
+
+#SIMULATION
+
+DataType="Amplitude.Unity.Simulation.SimulationDescriptor, Assembly-CSharp-firstpass" :
+- Public/Simulation/SimulationDescriptors.xml
+- Public/Simulation/SimulationDescriptors[*].xml
+- Public/Simulation/Battles/SimulationDescriptors[*].xml
+
+DataType="ResourceDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="LuxuryResourceDefinition, Assembly-CSharp"
+- Public/Simulation/ResourceDefinitions.xml
+
+DataType="PlanetReserveDefinition, Assembly-CSharp" :
+- Public/Simulation/PlanetReserveDefinitions.xml
+
+DataType="PropagatedPlanetDescriptorDefinition, Assembly-CSharp" :
+- Public/Simulation/PropagatedElementDefinitions[PlanetDescriptor].xml
+
+DataType="PropagatedPlanetPropertyDefinition, Assembly-CSharp" :
+- Public/Simulation/PropagatedElementDefinitions[PlanetProperty].xml
+
+DataType="SystemDefenseThresholdDefinition, Assembly-CSharp" :
+- Public/Simulation/SystemDefenseThresholdDefinitions.xml
+
+#POPULATION
+
+DataType="PopulationDefinition, Assembly-CSharp" :
+- Public/Simulation/PopulationDefinitions.xml
+- Public/Simulation/PopulationDefinitions[*].xml
+
+DataType="PopulationAspirationDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - Name="PopulationDesireDefinition" DataType="PopulationAspirationDefinition_Desire, Assembly-CSharp"
+- Public/Simulation/PopulationAspirationDefinitions.xml
+
+DataType="HappinessStatusSetDefinition, Assembly-CSharp" :
+- Public/Simulation/HappinessStatusSetDefinitions.xml
+
+DataType="PopulationEventDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="PopulationPoliticalEventDefinition, Assembly-CSharp"
+- Public/Simulation/PopulationPoliticalEventDefinitions.xml
+- Public/Simulation/PopulationPoliticalEventDefinitions[*].xml
+
+DataType="PopulationPoliticalTraitDefinition, Assembly-CSharp" :
+- Public/Simulation/PopulationPoliticalTraits.xml
+
+DataType="PopulationStateDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="PopulationStateDefinition_HappinessStatus, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_DiplomaticAbility, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_AcademyColonized, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_StarSystemImprovement, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_SystemBlockaded, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_SystemBesieged, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_HeroAssignedOnSystem, Assembly-CSharp"
+	 - DataType="PopulationStateDefinition_SystemInfluenceState, Assembly-CSharp"
+- Public/Simulation/PopulationStateDefinitions.xml
+
+DataType="PopulationCollectionBonusTrait, Assembly-CSharp" :
+- Public/Simulation/PopulationCollectionBonusTraits.xml
+
+DataType="PopulationModifiersTrait, Assembly-CSharp" :
+- Public/Simulation/PopulationModifiersTraits.xml
+
+#DEPOSITS
+
+DataType="ResourceDepositDefinition, Assembly-CSharp" :
+- Public/Simulation/ResourceDepositDefinitions.xml
+
+#ANOMALIES
+
+DataType="AnomalyDefinition, Assembly-CSharp" :
+- Public/Simulation/AnomalyDefinitions.xml
+
+#BATTLE
+
+DataType="ShipDesignDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/ShipDesignDefinitions.xml
+- Public/Simulation/Battles/ShipDesignDefinitions[*].xml
+
+DataType="ShipRoleDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/ShipRoleDefinitions.xml
+
+DataType="HullDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/HullDefinitions.xml
+- Public/Simulation/Battles/HullDefinitions[*].xml
+
+DataType="ModuleDefinition, Assembly-CSharp" Priority="10" :
+	ExtraTypes:
+	 - DataType="WeaponModuleDefinition, Assembly-CSharp"
+	 - DataType="DefenseModuleDefinition, Assembly-CSharp"
+	 - DataType="SupportModuleDefinition, Assembly-CSharp"
+	 - DataType="LogisticsModuleDefinition, Assembly-CSharp"
+	 - DataType="BridgeModuleDefinition, Assembly-CSharp"
+	 - DataType="MothershipModuleDefinition, Assembly-CSharp"
+	 - DataType="DestructionModuleDefinition, Assembly-CSharp"
+- Public/Simulation/Battles/ModuleDefinitions.xml
+- Public/Simulation/Battles/ModuleDefinitions[*].xml
+
+DataType="EncounterArenaDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterArenaDefinitions.xml
+
+DataType="EncounterFlotillaMatchDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterFlotillaMatchDefinitions.xml
+
+DataType="EncounterEntityDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="EncounterEntityDefinition_EffectArea, Assembly-CSharp"
+- Public/Simulation/Battles/EncounterEntityDefinitions.xml
+
+DataType="EncounterPlayDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterPlayDefinitions.xml
+
+DataType="EncounterSequenceDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterSequenceDefinitions.xml
+
+DataType="EncounterArrivalSequenceDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterArrivalSequenceDefinitions.xml
+
+DataType="EncounterFormationDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterFormationDefinitions.xml
+
+DataType="EncounterTargetingRangeDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/EncounterTargetingRangeDefinitions.xml
+
+DataType="SalvoDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/SalvoDefinitions.xml
+
+DataType="BattleActionDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/BattleActionDefinitions.xml
+
+DataType="BattleEffectDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="BattleEffectDefinition_ApplyDescriptor, Assembly-CSharp"
+	 - DataType="BattleEffectDefinition_SetPropertyValue, Assembly-CSharp"
+	 - DataType="BattleEffectDefinition_SetStatus, Assembly-CSharp"
+	 - DataType="BattleEffectDefinition_EmpireReward_Resource, Assembly-CSharp"
+	 - DataType="BattleEffectDefinition_EmpireReward_SpawnShips, Assembly-CSharp"
+- Public/Simulation/Battles/BattleEffectDefinitions.xml
+
+DataType="MedalDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/MedalDefinitions.xml
+
+DataType="RankDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/RankDefinitions.xml
+
+DataType="RankPatternDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/RankPatternDefinitions.xml
+
+DataType="LevelUpRuleDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/LevelUpRuleDefinitions.xml
+
+DataType="ShipConditionalConstructionEffectDefinition, Assembly-CSharp" :
+- Public/Simulation/Battles/ShipConditionalConstructionEffectDefinitions.xml
+
+#BUILDINGS
+
+DataType="IndustryConstructibleElement, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="StarSystemImprovementDefinition, Assembly-CSharp"
+	 - DataType="PlanetImprovementDefinition, Assembly-CSharp"
+	 - DataType="PlanetTerraformationDefinition, Assembly-CSharp"
+	 - DataType="PlanetActionImprovementDefinition, Assembly-CSharp"
+	 - DataType="StarSystemResourceImprovementDefinition, Assembly-CSharp"
+	 - DataType="StarSystemDecolonizeImprovementDefinition, Assembly-CSharp"
+	 - DataType="PlanetColonizationConstructibleElement, Assembly-CSharp"
+	 - DataType="StarSystemPopulationTransformImprovementDefinition, Assembly-CSharp"
+	 - DataType="TradeCompanyHeadquartersStarSystemImprovementDefinition, Assembly-CSharp"
+	 - DataType="TradeCompanySubsidiaryStarSystemImprovementDefinition, Assembly-CSharp"
+	 - DataType="StarSystemTimeBubbleImprovementDefinition, Assembly-CSharp"
+- Public/Simulation/ConstructibleElement_Industry[*].xml
+
+DataType="AnomalyReductionDefinition, Assembly-CSharp" :
+- Public/Simulation/ConstructibleElement_AnomalyReductions.xml
+
+DataType="PlanetCuriosityExpeditionDefinition, Assembly-CSharp" :
+- Public/Simulation/ConstructibleElement_Industry[PlanetCuriosityExpeditions].xml
+
+DataType="RecipeIngredientDefinition, Assembly-CSharp" :
+- Public/Simulation/RecipeIngredientDefinitions.xml
+
+DataType="RecipeSlotDefinition, Assembly-CSharp" :
+- Public/Simulation/RecipeSlotDefinitions.xml
+
+DataType="RecipeSpecialEffectDefinition, Assembly-CSharp" :
+- Public/Simulation/RecipeSpecialEffectDefinitions.xml
+
+DataType="PlanetColonizationConstructibleElement, Assembly-CSharp" :
+- Public/Simulation/ConstructibleElement_Industry[PlanetColonization].xml
+- Public/Simulation/ConstructibleElement_Industry[PostEarly].xml
+
+#TECHNOLOGY
+
+DataType="ScienceConstructibleElement, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="TechnologyDefinition, Assembly-CSharp"
+	 - DataType="TechnologyStageDefinition, Assembly-CSharp"
+- Public/Simulation/ConstructibleElement_Science[*].xml
+
+DataType="TechnologyQuadrantDefinition, Assembly-CSharp" :
+- Public/Simulation/QuadrantDefinition.xml
+
+DataType="TechnologyStageDefinition, Assembly-CSharp" :
+- Public/Simulation/ConstructibleElement_Science[*].xml
+
+DataType="TechnologyLinkDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="InteractiveTechnologyLinkDefinition, Assembly-CSharp"
+- Public/Simulation/TechnologyLinkDefinitions[*].xml
+
+#UNLOCKS
+
+DataType="UnlockDatatableElement, Assembly-CSharp" :
+- Public/Simulation/EmpireImprovements.xml
+
+DataType="EmpireImprovementDefinition, Assembly-CSharp" :
+- Public/Simulation/EmpireImprovements.xml
+- Public/Simulation/EmpireImprovements[*].xml
+
+DataType="TimeBubbleDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="FastForwardTimeBubbleDefinition, Assembly-CSharp"
+- Public/Simulation/TimeBubbleDefinitions.xml
+
+#ECONOMY
+
+DataType="CostReduction, Assembly-CSharp" :
+- Public/Simulation/CostReductions.xml
+
+DataType="ResourceConverterDefinition, Assembly-CSharp" :
+- Public/Simulation/ResourceConverterDefinitions.xml
+
+DataType="ConstructionRefundDefinition, Assembly-CSharp" :
+- Public/Simulation/ConstructionRefundDefinitions[*].xml
+
+DataType="BailiffDefinition, Assembly-CSharp" :
+- Public/Simulation/BailiffDefinitions.xml
+
+DataType="TradingCompanyDefinition, Assembly-CSharp" :
+- Public/Simulation/TradingCompanyDefinitions.xml
+
+DataType="TradableCategoryDefinition, Assembly-CSharp" :
+- Public/Simulation/TradableCategoryDefinitions.xml
+
+DataType="TradableSubCategoryDefinition, Assembly-CSharp" :
+- Public/Simulation/TradableSubCategoryDefinitions.xml
+
+DataType="TradableDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="TradableResourceDefinition, Assembly-CSharp"
+	 - DataType="TradableShipDefinition, Assembly-CSharp"
+	 - DataType="TradableHeroDefinition, Assembly-CSharp"
+- Public/Simulation/TradableDefinitions[*].xml
+
+DataType="MarketplaceAdvertisementDefinition, Assembly-CSharp" :
+- Public/Simulation/MarketplaceAdvertisementDefinitions.xml
+
+DataType="TradingCompanyImprovementDefinition, Assembly-CSharp" :
+- Public/Simulation/TradingCompanyImprovementDefinitions.xml
+
+DataType="MarketplaceEventDefinition, Assembly-CSharp" :
+- Public/Simulation/MarketplaceEventDefinitions.xml
+
+#TEMPORARYEFFECTS
+
+DataType="TemporaryEffectDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	- DataType="TemporaryEffectMinorRelationDefinition, Assembly-CSharp"
+- Public/Simulation/TemporaryEffectDefinitions.xml
+
+#GUI
+
+DataType="Amplitude.Unity.Gui.GuiWindowsStackDefinition, Assembly-CSharp-firstpass" :
+- Public/Gui/GuiWindowsStackDefinition.xml
+
+DataType="Amplitude.Unity.Gui.GuiTooltipDescription, Assembly-CSharp-firstpass" :
+- Public/Gui/GuiTooltipDescriptions.xml
+
+DataType="Amplitude.Unity.Gui.GuiElement, Assembly-CSharp-firstpass" :
+	ExtraTypes:
+	 - DataType="Amplitude.Unity.Gui.ExtendedGuiElement, Assembly-CSharp-firstpass"
+	 - DataType="AffinityGuiElement, Assembly-CSharp"
+	 - DataType="ResourceGuiElement, Assembly-CSharp"
+	 - DataType="HeroGuiElement, Assembly-CSharp"
+	 - DataType="HeroClassGuiElement, Assembly-CSharp"
+	 - DataType="PoliticsGuiElement, Assembly-CSharp"
+	 - DataType="WindowGuiElement, Assembly-CSharp"
+	 - DataType="LoadingWindowGuiElement, Assembly-CSharp"
+	 - DataType="MainMenuScreenGuiElement, Assembly-CSharp"
+	 - DataType="NewGameScreenGuiElement, Assembly-CSharp"
+	 - DataType="ControlBannerGuiElement, Assembly-CSharp"
+	 - DataType="TechnologyScreenGuiElement, Assembly-CSharp"
+	 - DataType="TechnologyQuadrantGuiElement, Assembly-CSharp"
+	 - DataType="EconomyScreenGuiElement, Assembly-CSharp"
+	 - DataType="FleetsScreenGuiElement, Assembly-CSharp"
+	 - DataType="TechnologyGuiElement2, Assembly-CSharp"
+	 - DataType="TableGuiElement, Assembly-CSharp"
+	 - DataType="LawGuiElement, Assembly-CSharp"
+	 - DataType="QuestGuiElement, Assembly-CSharp"
+	 - DataType="TutorialGuiElement, Assembly-CSharp"
+	 - DataType="GovernmentGuiElement, Assembly-CSharp"
+	 - DataType="RecipeSlotGuiElement, Assembly-CSharp"
+	 - DataType="EmpireActionGuiElement, Assembly-CSharp"
+	 - DataType="EmpireDiplomaticActionGuiElement, Assembly-CSharp"
+	 - DataType="ScanViewWindowGuiElement, Assembly-CSharp"
+	 - DataType="ScanViewCaptionGroupGuiElement, Assembly-CSharp"
+	 - DataType="AllianceGuiElement, Assembly-CSharp"
+	 - DataType="PlanetLabel_SystemDiscoveryGuiElement, Assembly-CSharp"
+	 - DataType="DiplomaticTermGuiElement, Assembly-CSharp"
+	 - DataType="CuriosityTypeGuiElement, Assembly-CSharp"
+	 - DataType="StarSystemResourceImprovementGuiElement, Assembly-CSharp"
+	 - DataType="TradableSectionGuiElement, Assembly-CSharp"
+	 - DataType="MinorFactionDiplomacyModalWindowGuiElement, Assembly-CSharp"
+	 - DataType="VictoryScreenGuiElement, Assembly-CSharp"
+	 - DataType="StarSystemOverviewScanViewGuiElement, Assembly-CSharp"
+	 - DataType="DamageDataGuiElement, Assembly-CSharp"
+- Public/Gui/GuiElements[*].xml
+- Public/Gui/Screens/GuiElements[*].xml
+
+DataType="AllianceGuiElement, Assembly-CSharp" :
+- Public/Gui/GuiElements[*].xml
+
+DataType="GuiSorter, Assembly-CSharp" :
+- Public/Gui/GuiSorter.xml
+
+DataType="GuiResourcePropertySet, Assembly-CSharp" :
+- Public/Gui/GuiResourcePropertySets.xml
+
+DataType="EncounterPlayTrajectoryDefinitionCollection, Assembly-CSharp" :
+- Public/Gui/GuiPlayVisualTrajectories.xml
+- Public/Gui/GuiPlayVisualCards.xml
+
+DataType="GuiHighlightDefinition, Assembly-CSharp" :
+- Public/Gui/Miscellaneous/GuiHighlightDefinition.xml
+
+#MISCELLANEOUS
+
+DataType="PanelFeatureModuleEffectsDefinition, Assembly-CSharp" :
+- Public/Gui/Miscellaneous/PanelFeatureModuleEffectsDefinition.xml
+
+DataType="GuiCursor, Assembly-CSharp" :
+- Public/Gui/GuiCursors.xml
+
+DataType="MouseCursorRule, Assembly-CSharp" Priority="-20" :
+- Public/Gui/GuiCursorRules.xml
+
+DataType="MinorStateDefinition, Assembly-CSharp" :
+- Public/MinorFactions/MinorStateDefinitions.xml
+
+DataType="ImprovementListDefinition, Assembly-CSharp" :
+- Public/MinorFactions/ImprovementListDefinitions.xml
+
+DataType="SystemSupervisorDefinition, Assembly-CSharp" :
+- Public/Simulation/SystemSupervisorDefinitions.xml
+
+#VISUAL
+
+DataType="Amplitude.Unity.View.Mapping.Xml.XmlMapping, Assembly-CSharp-firstpass" :
+- Public/Mapping/Mapping.xml
+
+DataType="Palette, Assembly-CSharp" :
+- Public/Mapping/Palettes.xml
+
+DataType="FleetNameMappingDefinition, Assembly-CSharp" :
+- Public/Mapping/FleetNameMappingDefinitions.xml
+
+DataType="PlanetImprovementMappingDefinition, Assembly-CSharp" :
+- Public/MinorFactions/PlanetImprovementMappingDefinitions.xml
+
+#FACTIONS
+
+DataType="FactionTrait, Assembly-CSharp" Priority="20" :
+	ExtraTypes:
+	 - DataType="FactionAffinity, Assembly-CSharp"
+	 - DataType="FactionAffinityMapping, Assembly-CSharp"
+	 - DataType="FactionPopulationTrait, Assembly-CSharp"
+- Public/Simulation/FactionTraits.xml
+- Public/Simulation/FactionTraits[*].xml
+
+DataType="FactionAffinity, Assembly-CSharp" :
+- Public/Simulation/FactionTraits[Affinity].xml
+
+DataType="FactionAffinityMapping, Assembly-CSharp" :
+- Public/Simulation/FactionTraits[AffinityMapping].xml
+
+DataType="FactionTraitCategoryDefinition, Assembly-CSharp" :
+- Public/Simulation/FactionTraitCategoryDefinitions.xml
+
+DataType="MinorFactionPersonalityDefinition, Assembly-CSharp" :
+- Public/Simulation/MinorFactionPersonalityDefinitions.xml
+
+DataType="PersonalityDefinition, Assembly-CSharp" :
+- Public/Simulation/PersonalityDefinitions.xml
+
+DataType="Faction, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="MajorFaction, Assembly-CSharp"
+	 - DataType="MinorFaction, Assembly-CSharp"
+	 - DataType="LesserFaction, Assembly-CSharp"
+	 - DataType="PirateFaction, Assembly-CSharp"
+- Public/Simulation/Factions[*].xml
+
+DataType="MajorFaction, Assembly-CSharp" :
+- Public/Simulation/Factions[Major].xml
+
+DataType="MinorFaction, Assembly-CSharp" :
+- Public/Simulation/Factions[Minor].xml
+
+#POLITICS
+
+DataType="PoliticsDefinition, Assembly-CSharp" :
+- Public/Simulation/PoliticsDefinitions.xml
+
+DataType="GovernmentDefinition, Assembly-CSharp" :
+- Public/Simulation/GovernmentDefinitions.xml
+
+DataType="LawDefinition, Assembly-CSharp" :
+- Public/Simulation/LawDefinitions.xml
+- Public/Simulation/LawDefinitions[*].xml
+
+DataType="ElectionProcessTaskDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="ElectionProcessMetaTaskDefinition, Assembly-CSharp"
+- Public/Simulation/ElectionProcessTaskDefinitions.xml
+
+DataType="ElectionProcessDefinition, Assembly-CSharp" :
+- Public/Simulation/ElectionProcessDefinitions.xml
+
+DataType="SenatorInteractionDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="SenatorInteractionDefinition_Assassinate, Assembly-CSharp"
+	 - DataType="SenatorInteractionDefinition_Dismiss, Assembly-CSharp"
+	 - DataType="SenatorInteractionDefinition_MakeACoup, Assembly-CSharp"
+	 - DataType="SenatorInteractionDefinition_Seduce, Assembly-CSharp"
+- Public/Simulation/SenatorInteractionDefinitions.xml
+
+DataType="ElectionActionDefinition, Assembly-CSharp" :
+- Public/Simulation/ElectionActionDefinitions.xml
+
+DataType="PoliticsSupportStatusDefinition, Assembly-CSharp" :
+- Public/Simulation/PoliticsSupportStatusDefinitions.xml
+
+DataType="PoliticsExperienceStatusDefinition, Assembly-CSharp" :
+- Public/Simulation/PoliticsExperienceStatusDefinitions.xml
+
+#HEROES
+
+DataType="HeroAffinityDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroAffinityDefinitions.xml
+- Public/Simulation/HeroAffinityDefinitions[*].xml
+
+DataType="HeroClassDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroClassDefinitions.xml
+- Public/Simulation/HeroClassDefinitions[*].xml
+
+DataType="HeroPoliticsDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroPoliticsDefinitions.xml
+
+DataType="HeroSkillTreeDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroSkillTreeDefinitions.xml
+- Public/Simulation/HeroSkillTreeDefinitions[*].xml
+
+DataType="HeroSkillDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroSkillDefinitions.xml
+- Public/Simulation/HeroSkillDefinitions[*].xml
+
+DataType="HeroMasteryDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroMasteryDefinitions.xml
+
+DataType="HeroUnlockGaugeDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroUnlockGaugeDefinitions.xml
+
+DataType="ScoreProviderListDefinition, Assembly-CSharp" :
+- Public/Simulation/ScoreProviderListDefinitions.xml
+
+DataType="HeroDefinition, Assembly-CSharp" :
+- Public/Simulation/HeroDefinitions.xml
+
+#QUESTS
+
+<!-- Quests have a very specific DatabasePlugin which should not be modified. Please use the following with only the FilePath modified. -->
+<DatabasePlugin DataType="QuestDefinition, Assembly-CSharp">
+	<ExtraTypes>
+		<ExtraType DataType="TutorialDefinition, Assembly-CSharp" />
+	</ExtraTypes>
+	<Overrides>
+		<Override Name="Prerequisites" DataType="Amplitude.Query.Xml.XmlQueryPrerequisites, Assembly-CSharp-firstpass">
+			<ExtraType Name="FilterConstellationByDistance" DataType="QuestFilterConstellationByDistance, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByStatus" DataType="QuestFilterSystemByStatus, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByDistance" DataType="QuestFilterSystemByDistance, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByCuriosity" DataType="QuestFilterSystemByCuriosity, Assembly-CSharp" />
+			<ExtraType Name="FilterPlanetByCuriosity" DataType="QuestFilterPlanetByCuriosity, Assembly-CSharp" />
+			<ExtraType Name="FilterShipDesignByModule" DataType="QuestFilterShipDesignByModule, Assembly-CSharp" />
+			<ExtraType Name="FilterByStringValue" DataType="QuestFilterByStringValue, Assembly-CSharp" />
+			<ExtraType Name="IsNot" DataType="QuestFilterDifferentEntity, Assembly-CSharp" />
+		</Override>
+		<Override Name="Sorter" DataType="Amplitude.Query.Xml.XmlQuerySorter, Assembly-CSharp-firstpass">
+			<ExtraType Name="SortConstellationByDistance" DataType="QuestSorterConstellationByDistance, Assembly-CSharp" />
+			<ExtraType Name="SortSystemByDistance" DataType="QuestSorterSystemByDistance, Assembly-CSharp" />
+		</Override>
+	</Overrides>
+	<FilePath>Public/Quests/QuestDefinitions[*].xml</FilePath>
+	<FilePath>Public/Tutorials/TutorialDefinitions[*].xml</FilePath>
+</DatabasePlugin>
+
+DataType="QuestEffectDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="QuestEffectAddDescriptorsDefinition, Assembly-CSharp"
+- Public/Quests/Effects/QuestEffectDefinitions[*].xml
+
+DataType="QuestTriggeringProbabilityDefinition, Assembly-CSharp" :
+- Public/Quests/QuestTriggeringProbabilityDefinitions.xml
+
+DataType="Droplist, Assembly-CSharp" :
+- Public/Quests/Droplists/Droplists[*].xml
+
+<!-- Just like Quests, Tutorials are specific and their DatabasePlugin is unique -->
+<DatabasePlugin DataType="TutorialDefinition, Assembly-CSharp">
+	<Overrides>
+		<Override Name="Prerequisites" DataType="Amplitude.Query.Xml.XmlQueryPrerequisites, Assembly-CSharp-firstpass">
+			<ExtraType Name="FilterConstellationByDistance" DataType="QuestFilterConstellationByDistance, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByStatus" DataType="QuestFilterSystemByStatus, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByDistance" DataType="QuestFilterSystemByDistance, Assembly-CSharp" />
+			<ExtraType Name="FilterSystemByCuriosity" DataType="QuestFilterSystemByCuriosity, Assembly-CSharp" />
+			<ExtraType Name="FilterPlanetByCuriosity" DataType="QuestFilterPlanetByCuriosity, Assembly-CSharp" />
+			<ExtraType Name="FilterShipDesignByModule" DataType="QuestFilterShipDesignByModule, Assembly-CSharp" />
+			<ExtraType Name="FilterByStringValue" DataType="QuestFilterByStringValue, Assembly-CSharp" />
+			<ExtraType Name="IsNot" DataType="QuestFilterDifferentEntity, Assembly-CSharp" />
+		</Override>
+		<Override Name="Sorter" DataType="Amplitude.Query.Xml.XmlQuerySorter, Assembly-CSharp-firstpass">
+			<ExtraType Name="SortConstellationByDistance" DataType="QuestSorterConstellationByDistance, Assembly-CSharp" />
+			<ExtraType Name="SortSystemByDistance" DataType="QuestSorterSystemByDistance, Assembly-CSharp" />
+		</Override>
+	</Overrides>
+	<FilePath>Public/Tutorials/TutorialDefinitions[*].xml</FilePath>
+</DatabasePlugin>
+
+DataType="MinigameDefinition, Assembly-CSharp" :
+	ExtraTypes:
+	 - DataType="KingOfTheHillMinigameDefinition, Assembly-CSharp"
+	 - DataType="ExplorationMinigameDefinition, Assembly-CSharp"
+- Public/Simulation/MinigameDefinitions.xml
+
+#VICTORY
+
+DataType="VictoryConditionDefinition, Assembly-CSharp" Priority="-10" :
+- Public/Statistics and Achievements/VictoryConditionDefinitions.xml
+
+#CURIOSITIES
+
+DataType="CuriosityDefinition, Assembly-CSharp" :
+- Public/Simulation/CuriosityDefinitions.xml
+
+DataType="CuriosityDroplist, Assembly-CSharp" :
+- Public/Simulation/CuriosityDroplists.xml
+
+DataType="FleetMissionDefinition, Assembly-CSharp" :
+- Public/MinorFactions/FleetMissionDefinitions.xml
+
+DataType="SystemDiscoverySequenceDefinition, Assembly-CSharp" :
+- Public/Simulation/SystemDiscoverySequenceDefinitions.xml
+
+DataType="Amplitude.Unity.Framework.AnimationCurve, Assembly-CSharp-firstpass" :
+- Public/Curves/AnimationCurves[*].xml
+
+#INVASION
+
+DataType="GroundBattleViewerConfig, Assembly-CSharp" :
+- Public/GroundBattle/GroundBattleViewerConfigs.xml
+
+DataType="GroundBattleTroopTypeConfig, Assembly-CSharp" :
+- Public/GroundBattle/GroundBattleTroopTypeConfigs.xml
+
+DataType="GroundBattleUnitConfig, Assembly-CSharp" :
+- Public/GroundBattle/GroundBattleUnitConfigs.xml
+
+DataType="GroundBattleStrategyDefinition, Assembly-CSharp" :
+- Public/GroundBattle/GroundBattleStrategies.xml
+
+DataType="ManpowerUpgradeDefinition, Assembly-CSharp" :
+- Public/Simulation/ManpowerUpgradeDefinition.xml
